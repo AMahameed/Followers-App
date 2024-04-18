@@ -21,9 +21,9 @@ class DVTextField: UITextField {
     private func dvTextFieldConfig() {
         translatesAutoresizingMaskIntoConstraints = false
         
-        layer.cornerRadius = 5
+        layer.cornerRadius = 8
         layer.borderWidth = 2
-        layer.borderColor = UIColor.systemGray4.cgColor
+        layer.borderColor = UIColor.systemGray3.cgColor
         
         textColor = .label
         tintColor = .black

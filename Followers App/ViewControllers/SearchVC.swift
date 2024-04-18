@@ -12,7 +12,11 @@ class SearchVC: UIViewController {
     let gitHubImage = UIImageView(image: UIImage(named: "gh-logo"))
     let searchTextField = DVTextField()
     let actionButton = DVButton(backgroundColor: .systemGreen, title: "Get Followers")
-
+    
+    var isUsernameEntered: Bool {
+        return !searchTextField.text!.isEmpty
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -61,8 +65,10 @@ class SearchVC: UIViewController {
         ])
     }
     
+    
     private func buttonConfig() {
         view.addSubview(actionButton)
+        actionButton.addTarget(self, action: #selector(pushFollowersVC), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
             actionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -60),
@@ -70,6 +76,20 @@ class SearchVC: UIViewController {
             actionButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
             actionButton.heightAnchor.constraint(equalToConstant: 50)
         ])
+    }
+    
+    
+    @objc private func pushFollowersVC() {
+        
+        guard isUsernameEntered else {
+            presentAlertOnMainThread(title: "Empty Username",
+                                     body: "Please enter a username. We need to know who to Search for.",
+                                     buttonTitle: "Ok")
+            return
+        }
+        
+        let followersVC = FollowersListVC(username: "Mahameed")
+        navigationController?.pushViewController(followersVC, animated: true)
     }
 }
 

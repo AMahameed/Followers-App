@@ -11,7 +11,8 @@ class MainTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        createTabBarItems()
+        tabBarConfig()
+        navBarConfig()
     }
     
     private func createSearchNC() -> UINavigationController {
@@ -20,7 +21,6 @@ class MainTabBarController: UITabBarController {
         searchVC.title = "Search"
         searchVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
         let searchNC = UINavigationController(rootViewController: searchVC)
-        searchNC.navigationBar.prefersLargeTitles = true
         
         return searchNC
     }
@@ -38,9 +38,13 @@ class MainTabBarController: UITabBarController {
     }
     
     
-    private func createTabBarItems() {
+    private func tabBarConfig() {
         UITabBar.appearance().tintColor = .systemGreen
         self.viewControllers = [createSearchNC(), createFavoritesNC()]
+    }
+    
+    private func navBarConfig() {
+        UINavigationBar.appearance().tintColor = .systemGreen
     }
     
 }

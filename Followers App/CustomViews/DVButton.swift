@@ -27,7 +27,7 @@ class DVButton: UIButton {
     
     private func dvButtonConfig() {
         translatesAutoresizingMaskIntoConstraints = false
-        layer.cornerRadius = 5
+        layer.cornerRadius = 8
         layer.shadowOffset = CGSize(width: 2, height: 2)
         layer.shadowOpacity = 0.5
         layer.shadowRadius = 4
