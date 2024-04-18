@@ -35,6 +35,7 @@ class DVTextField: UITextField {
         
         autocorrectionType = .no
         keyboardType = .emailAddress
+        returnKeyType = .go
         placeholder = "Enter a Username"
         
     }

@@ -11,7 +11,6 @@ class MainTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         createTabBarItems()
     }
     
@@ -41,11 +40,6 @@ class MainTabBarController: UITabBarController {
     
     private func createTabBarItems() {
         UITabBar.appearance().tintColor = .systemGreen
-        UITabBar.appearance().backgroundColor = .systemBackground
-        UITabBar.appearance().alpha = 0.85
-        
-        
-        
         self.viewControllers = [createSearchNC(), createFavoritesNC()]
     }
     

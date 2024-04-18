@@ -28,6 +28,10 @@ class DVButton: UIButton {
     private func dvButtonConfig() {
         translatesAutoresizingMaskIntoConstraints = false
         layer.cornerRadius = 5
+        layer.shadowOffset = CGSize(width: 2, height: 2)
+        layer.shadowOpacity = 0.5
+        layer.shadowRadius = 4
+        layer.shadowColor = UIColor.gray.cgColor
         titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
         titleLabel?.textAlignment = .center
         titleLabel?.textColor = .white
