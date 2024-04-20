@@ -23,6 +23,7 @@
 		73BAFC892BD1F9C3003055AC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BAFC882BD1F9C3003055AC /* User.swift */; };
 		73BAFC8C2BD1FC56003055AC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 73BAFC8B2BD1FC56003055AC /* Alamofire */; };
 		73BAFC8E2BD1FC56003055AC /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 73BAFC8D2BD1FC56003055AC /* AlamofireDynamic */; };
+		73BAFC912BD33868003055AC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BAFC902BD33868003055AC /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		73BAFC822BD1C649003055AC /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		73BAFC862BD1F9BC003055AC /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		73BAFC882BD1F9C3003055AC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		73BAFC902BD33868003055AC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			children = (
 				73BAFC562BCFEE7C003055AC /* AppDelegate.swift */,
 				73BAFC582BCFEE7C003055AC /* SceneDelegate.swift */,
+				73BAFC8F2BD33857003055AC /* Managers */,
 				73BAFC852BD1F993003055AC /* Model */,
 				73BAFC7D2BD1BBB4003055AC /* Screens */,
 				73BAFC7C2BD1BAE3003055AC /* CustomViews */,
@@ -133,6 +136,14 @@
 				73BAFC882BD1F9C3003055AC /* User.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		73BAFC8F2BD33857003055AC /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				73BAFC902BD33868003055AC /* NetworkManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +226,7 @@
 				73BAFC6D2BD016D4003055AC /* SearchVC.swift in Sources */,
 				73BAFC732BD17311003055AC /* DVTextField.swift in Sources */,
 				73BAFC7B2BD1BAC7003055AC /* FollowersListVC.swift in Sources */,
+				73BAFC912BD33868003055AC /* NetworkManager.swift in Sources */,
 				73BAFC802BD1C165003055AC /* CustomAlert.swift in Sources */,
 				73BAFC6F2BD016EA003055AC /* FavoriteListVC.swift in Sources */,
 				73BAFC572BCFEE7C003055AC /* AppDelegate.swift in Sources */,
