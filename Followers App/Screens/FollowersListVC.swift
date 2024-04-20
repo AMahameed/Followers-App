@@ -27,7 +27,15 @@ class FollowersListVC: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         
         Task {
-            let _ = try await NetworkManager.shared.getFollowers(for: username!)
+            let result = try await NetworkManager.shared.getFollowers(for: username!)
+            
+            switch result {
+            case .success(let followers):
+                print(followers)
+            case .failure(let error):
+                presentAlertOnMainThread(title: "Oops, Data Vanished", body: error.rawValue, buttonTitle: "Ok")
+                navigationController?.popViewController(animated: true)
+            }
         }
     }
     

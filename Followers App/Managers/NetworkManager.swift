@@ -16,7 +16,7 @@ class NetworkManager {
     //  To protect the class for being instantiated from outside the class.
     private init() { }
     
-    func getFollowers(for username: String) async throws -> [Follower]? {
+    func getFollowers(for username: String) async throws -> Result<[Follower], DVError> {
         let response = await AF.request(GHRouter.followers(username: username))
             .validate()
             .serializingDecodable([Follower].self)
@@ -26,11 +26,11 @@ class NetworkManager {
             
         case .success(let followers):
             Logger().info("followers has been fetched \n \(followers)")
-            return followers
+            return .success(followers)
             
         case .failure( _):
             Logger().error("\(response.debugDescription)")
-            return nil
+            return .failure(.followersError)
         }
     }
 }

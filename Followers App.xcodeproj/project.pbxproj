@@ -24,6 +24,7 @@
 		73BAFC8C2BD1FC56003055AC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 73BAFC8B2BD1FC56003055AC /* Alamofire */; };
 		73BAFC8E2BD1FC56003055AC /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 73BAFC8D2BD1FC56003055AC /* AlamofireDynamic */; };
 		73BAFC912BD33868003055AC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BAFC902BD33868003055AC /* NetworkManager.swift */; };
+		73BAFC962BD36B4C003055AC /* DVError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BAFC952BD36B4C003055AC /* DVError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		73BAFC862BD1F9BC003055AC /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		73BAFC882BD1F9C3003055AC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		73BAFC902BD33868003055AC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		73BAFC952BD36B4C003055AC /* DVError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DVError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			children = (
 				73BAFC562BCFEE7C003055AC /* AppDelegate.swift */,
 				73BAFC582BCFEE7C003055AC /* SceneDelegate.swift */,
+				73BAFC922BD36856003055AC /* Utilities */,
 				73BAFC8F2BD33857003055AC /* Managers */,
 				73BAFC852BD1F993003055AC /* Model */,
 				73BAFC7D2BD1BBB4003055AC /* Screens */,
@@ -144,6 +147,14 @@
 				73BAFC902BD33868003055AC /* NetworkManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		73BAFC922BD36856003055AC /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				73BAFC952BD36B4C003055AC /* DVError.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73BAFC962BD36B4C003055AC /* DVError.swift in Sources */,
 				73BAFC6D2BD016D4003055AC /* SearchVC.swift in Sources */,
 				73BAFC732BD17311003055AC /* DVTextField.swift in Sources */,
 				73BAFC7B2BD1BAC7003055AC /* FollowersListVC.swift in Sources */,
