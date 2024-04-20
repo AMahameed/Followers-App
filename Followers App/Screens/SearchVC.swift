@@ -88,7 +88,7 @@ class SearchVC: UIViewController {
             return
         }
         
-        let followersVC = FollowersListVC(username: "Mahameed")
+        let followersVC = FollowersListVC(username: searchTextField.text)
         navigationController?.pushViewController(followersVC, animated: true)
     }
 }
@@ -96,6 +96,9 @@ class SearchVC: UIViewController {
 extension SearchVC: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchTextField.text = textField.text
         textField.resignFirstResponder()
+        return true
     }
+    
 }

@@ -16,9 +16,8 @@ class NetworkManager {
     //  To protect the class for being instantiated from outside the class.
     private init() { }
     
-    func getFollowers(for username: String, page: Int) async throws -> [Follower]? {
-        
-        let response = await AF.request(GHRouter.followers(username: username, page: page))
+    func getFollowers(for username: String) async throws -> [Follower]? {
+        let response = await AF.request(GHRouter.followers(username: username))
             .validate()
             .serializingDecodable([Follower].self)
             .response
@@ -26,7 +25,7 @@ class NetworkManager {
         switch response.result {
             
         case .success(let followers):
-            Logger().info("followers has been fetched \\n \(followers)")
+            Logger().info("followers has been fetched \n \(followers)")
             return followers
             
         case .failure( _):
@@ -37,7 +36,7 @@ class NetworkManager {
 }
 
 enum GHRouter {
-    case followers(username: String, page: Int)
+    case followers(username: String)
     
     var baseURL: URL {
         URL(string: "https://api.github.com/users/")!
@@ -45,8 +44,8 @@ enum GHRouter {
     
     var path: String {
         switch self {
-        case .followers(let username, let page):
-            return "\(username)/followers?per_page=100&page=\(page)"
+        case .followers(let username):
+            return "\(username)/followers"
         }
     }
     
@@ -60,7 +59,7 @@ enum GHRouter {
 
 extension GHRouter: URLRequestConvertible {
     func asURLRequest() throws -> URLRequest {
-        let url = baseURL.appendingPathComponent(path)
+        let url = baseURL.appending(path: path)
         
         var request = URLRequest(url: url)
         

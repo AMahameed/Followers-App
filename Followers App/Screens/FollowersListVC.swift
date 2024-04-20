@@ -8,7 +8,7 @@
 import UIKit
 
 class FollowersListVC: UIViewController {
-
+    
     var username: String?
     
     init(username: String? = nil) {
@@ -25,6 +25,10 @@ class FollowersListVC: UIViewController {
         view.backgroundColor = .systemBackground
         title = username
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        Task {
+            let _ = try await NetworkManager.shared.getFollowers(for: username!)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
